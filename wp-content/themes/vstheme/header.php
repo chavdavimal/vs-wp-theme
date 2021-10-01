@@ -15,11 +15,9 @@
 
     <header>
       <?php
-		// Output the menu modal.
+		  // Output the navigation bar.
 		  get_template_part( 'template-parts/navigation' );?>
     </header>
-
-    
 
   </body>
 </html>
