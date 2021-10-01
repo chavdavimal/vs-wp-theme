@@ -15,6 +15,7 @@
  */
 
 get_header();
+wp_head();
 ?>
 
 
