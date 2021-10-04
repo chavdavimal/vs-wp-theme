@@ -24,6 +24,63 @@ header{
         }
     }
 }
+.size-c{
+    &.left-c{        
+        // @media only screen and (min-width: 576px) {
+        //     max-width: calc(540px / 2);
+        //     margin-left: auto;
+        //     padding-left: 30px;
+        // }
+        @media only screen and (min-width: 768px) {
+            max-width: calc(720px / 2);
+            margin-left: auto;
+            padding-left: 30px;
+        }
+        @media only screen and (min-width: 992px) {
+            max-width: calc(960px / 2);
+            margin-left: auto;
+            padding-left: 30px;
+        }
+        @media only screen and (min-width: 1200px) {
+            max-width: calc(1140px / 2);
+            margin-left: auto;
+            padding-left: 30px;
+        }
+        @media only screen and (min-width: 1400px) {
+            max-width: calc(1320px / 2);
+            margin-left: auto;
+            padding-left: 30px;
+        }
+    }
+    &.right-c{
+
+        // @media only screen and (min-width: 576px) {
+        //     max-width: calc(540px / 2);
+        //     margin-right: auto;
+        //     padding-right: 30px;
+        // }
+        @media only screen and (min-width: 768px) {
+            max-width: calc(720px / 2);
+            margin-right: auto;
+            padding-right: 30px;
+        }
+        @media only screen and (min-width: 992px) {
+            max-width: calc(960px / 2);
+            margin-right: auto;
+            padding-right: 30px;
+        }
+        @media only screen and (min-width: 1200px) {
+            max-width: calc(1140px / 2);
+            margin-right: auto;
+            padding-right: 30px;
+        }
+        @media only screen and (min-width: 1400px) {
+            max-width: calc(1320px / 2);
+            margin-right: auto;
+            padding-right: 30px;
+        }
+    }
+}
 .bg-img{
     position: absolute;
     height: 100%;
@@ -36,25 +93,45 @@ header{
 }
 
 .banner-title{
-    font-size: 36px;
-    color: #fff;
+    font-size: 36px;    
     line-height: 36px;
     font-weight: bold;
     letter-spacing: 1px;
 }
 .banner-caption{
     font-size: 20px;
-    color: #fff;
+    
 }
 .banner-fullwidth{
     min-height: calc(100vh - 100px);
     .banner-contents{
         z-index: 1;
+        .banner-title{
+            color: #fff;
+        }
+        .banner-caption{
+            color: #fff;
+        }
     }
 }
 .banner-halfwidth{
     min-height: calc(100vh - 100px);
     .banner-contents{
         z-index: 1;
+    }
+}
+.banner-halfwidth-1{
+    // min-height: calc(100vh - 100px);
+    .banner-contents{
+        z-index: 1;
+    }
+    .right{
+        min-height: calc(100vh - 100px);
+        img{
+            object-fit: cover;
+            object-position: center;
+            height: 100%;
+            width: 100%;
+        }
     }
 }
