@@ -13,7 +13,7 @@ function my_register_styles() {
 	// if( is_page_template( 'page-about-us.php' )) {
 	// }
 	
-    wp_enqueue_style( 'bx-style', get_template_directory_uri() . 'style.css' );
+    wp_enqueue_style( 'bx-style', get_template_directory_uri() . '/style.css' );
 }
 add_action( 'wp_enqueue_scripts', 'my_register_styles', 11 );
 
