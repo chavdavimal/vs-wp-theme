@@ -5,7 +5,7 @@
                     <div class="col-md-3 col-6 col-footer-1 order-md-0 order-0 mb-5">
                         <div class="site-desc">
                             <a href="<?php echo get_home_url()?>" role="button">
-                            <!-- add footer logo dynamically here -->
+                            
                                 <img src="<?php echo get_home_url()?>/wp-content/uploads/2021/10/logo_round.png" />
                             </a>
                         </div>
