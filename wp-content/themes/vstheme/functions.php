@@ -65,3 +65,156 @@ function themename_custom_logo_setup() {
  
 add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
 
+
+// Add Widgets 
+function customtheme_widgets_init() {
+    register_sidebar( array(
+        'name'          => __( 'Sidebar', 'customtheme' ),
+        'id'            => 'sidebar-1',
+        'description'   => __( 'Add widgets here to appear in your sidebar.', 'customtheme' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+}
+
+add_action( 'widgets_init', 'customtheme_widgets_init' );
+
+// Add All Pages
+function diwp_add_dropdown_pages($wp_customize){
+ 
+    //add section
+    $wp_customize->add_section( 'diwp_dropdown_page_section', array(
+ 
+                'title' => 'All Pages',
+                'priority' => 10
+    ));
+ 
+    //add setting
+    $wp_customize->add_setting( 'diwp_dropdown_page', array(
+                'default' => '',
+    ));
+ 
+    //add control
+    $wp_customize->add_control( 'diwp_dropdown_page_control', array(
+                'label' => 'Select Page',
+                'type'  => 'dropdown-pages',
+                'section' => 'diwp_dropdown_page_section',
+                'settings' => 'diwp_dropdown_page'
+    ));
+ 
+}
+ 
+add_action( 'customize_register', 'diwp_add_dropdown_pages' );
+
+
+// Add Checkbox to WordPress Customizer
+function diwp_add_checkbox($wp_customize){
+ 
+    //add section
+    $wp_customize->add_section( 'diwp_checkbox_section', array(
+ 
+                'title' => 'My Custom Checkbox',
+                'priority' => 10,
+                'description' => 'Welcome to My Custom Checkbox section'
+    ));
+ 
+    //add setting
+    $wp_customize->add_setting( 'diwp_checkbox', array(
+                'default' => '',
+    ));
+ 
+    //add control
+    $wp_customize->add_control( 'diwp_checkbox_control', array(
+                'label' => 'Display Welcome Message',
+                'type'  => 'checkbox', // this indicates the type of control
+                'section' => 'diwp_checkbox_section',
+                'settings' => 'diwp_checkbox'
+    ));
+ 
+}
+ 
+add_action( 'customize_register', 'diwp_add_checkbox' );
+
+
+
+//=========================================================
+// Add New Colors Section : DIWP Colors
+//=========================================================
+ 
+function diwp_customizer_add_colorPicker( $wp_customize){
+     
+    // Add New Section: DIWP Colors
+  
+    $wp_customize->add_section( 'diwp_color_section', array(
+                     'title' => 'DIWP Colors',
+                     'description' => 'Set Colors For Background & Links',
+                     'priority' => '40'                  
+    ));
+ 
+    // Add Settings 
+    $wp_customize->add_setting( 'diwp_theme_color', array(
+        'default' => '#04bfbf',
+    ));
+ 
+ 
+    $wp_customize->add_setting( 'diwp_header_bgcolor', array(
+        'default' => '#45ace0',                        
+    ));
+ 
+ 
+    // Add Controls
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'diwp_theme_color', array(
+        'label' => 'Theme Color',
+        'section' => 'diwp_color_section',
+        'settings' => 'diwp_theme_color'
+ 
+    )));
+ 
+ 
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'diwp_header_bgcolor', array(
+        'label' => 'Header Background',
+        'section' => 'diwp_color_section',
+        'settings' => 'diwp_header_bgcolor'
+    )));
+ 
+}
+ 
+add_action( 'customize_register', 'diwp_customizer_add_colorPicker' );
+
+function diwp_generate_theme_option_css(){
+ 
+    $themeColor = get_theme_mod('diwp_theme_color');
+    $header_bgcolor = get_theme_mod('diwp_header_bgcolor');
+ 
+    if(!empty($themeColor)):
+     
+    ?>
+    <style type="text/css" id="diwp-theme-option-css">
+         
+        .site-header{
+            background:<?php echo $header_bgcolor; ?>;
+        }
+ 
+        a:hover{
+            color: <?php echo $themeColor; ?>
+        }        
+ 
+        .search-form .search-submit{
+            background: <?php echo $themeColor; ?>
+        }
+ 
+        .entry-title a:hover, .entry-title a:focus, .entry-title a:active, .page-title a:hover, .page-title a:focus, .page-title a:active {
+            color: <?php echo $themeColor; ?>;
+        }
+     
+    </style>    
+ 
+    <?php
+ 
+    endif;    
+}
+ 
+add_action( 'wp_head', 'diwp_generate_theme_option_css' );
+
