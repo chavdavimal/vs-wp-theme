@@ -6,8 +6,18 @@
                     <div class="col-md-3 col-6 col-footer-1 order-md-0 order-0 mb-5">
                         <div class="site-desc">
                             <a href="<?php echo get_home_url()?>" role="button">                            
-                                <img src="<?php echo get_home_url()?>/wp-content/uploads/2021/10/logo_round.png" />
+                                <!-- <img src="<?php echo get_home_url()?>/wp-content/uploads/2021/10/logo_round.png" /> -->
+                                <?php 
+                                    $custom_logo_id = get_theme_mod( 'custom_logo' );
+                                    $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                                        if ( has_custom_logo() ) {
+                                            echo '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
+                                        } else {
+                                            echo '<h1>' . get_bloginfo('name') . '</h1>';
+                                        }
+                                ?>
                             </a>
+
                         </div>
                     </div>
                     <!-- column 2 -->
@@ -16,7 +26,15 @@
                             <h5 class="footer-title">QUICK LINKS</h4>
                             <div class="quick-menu-list menu-list">
                                 <?php 
-                                    wp_nav_menu( array( 'menu' => 'footer-menu') );
+                                   // wp_nav_menu( array( 'menu' => 'footer-menu') );
+                                ?>
+                                <?php 
+                                    wp_nav_menu(array(
+                                        'theme_location' =>  'footer',
+                                        'menu_class' => 'navbar-nav ms-auto my-2 my-lg-0', 
+                                        'add_li_class' => 'nav-item',
+                                        "container" => false, 
+                                    ));
                                 ?>
                             </div>
                         </div>
