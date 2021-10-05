@@ -1,15 +1,17 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <?php 
-                $custom_logo_id = get_theme_mod( 'custom_logo' );
-                $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
- 
-                    if ( has_custom_logo() ) {
-                        echo '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
-                    } else {
-                        echo '<h1>' . get_bloginfo('name') . '</h1>';
-                    }
-            ?>
+            <a class="navbar-brand" href="<?php echo get_home_url()?>">
+                <?php 
+                    $custom_logo_id = get_theme_mod( 'custom_logo' );
+                    $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+    
+                        if ( has_custom_logo() ) {
+                            echo '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
+                        } else {
+                            echo '<h1>' . get_bloginfo('name') . '</h1>';
+                        }
+                ?>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -21,7 +23,7 @@
                     <?php 
                         wp_nav_menu(array(
                             'theme_location' =>  'primary',
-                            'menu_class' => 'navbar-nav me-auto my-2 my-lg-0', 
+                            'menu_class' => 'navbar-nav ms-auto my-2 my-lg-0', 
                             'add_li_class' => 'nav-item',
                             "container" => false, 
                         ));
