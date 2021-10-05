@@ -2,14 +2,15 @@
         <div class="footer-wrapper sec-p">
             <div class="container">
                 <div class="row">
+                    <!-- column 1 -->
                     <div class="col-md-3 col-6 col-footer-1 order-md-0 order-0 mb-5">
                         <div class="site-desc">
-                            <a href="<?php echo get_home_url()?>" role="button">
-                            
+                            <a href="<?php echo get_home_url()?>" role="button">                            
                                 <img src="<?php echo get_home_url()?>/wp-content/uploads/2021/10/logo_round.png" />
                             </a>
                         </div>
                     </div>
+                    <!-- column 2 -->
                     <div class="col-md-3 col-6 col-footer-2 order-md-1 order-2 mb-5">
                         <div class="quick-links">
                             <h5 class="footer-title">QUICK LINKS</h4>
@@ -20,6 +21,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- column 3 -->
                     <div class="col-md-3 col-6 col-footer-3 order-md-2 order-3 mb-5">
                         <div class="footer-location">
                             <h5 class="footer-title">TALK TO US</h4>
@@ -28,9 +30,20 @@
                             </div>
                         </div>
                     </div>
+                    <!-- column 4 -->
                     <div class="col-md-3 col-6 col-footer-4 order-md-3 order-1 mb-5">
                         <div class="follow-us-links">
                             <h5 class="footer-title">FOLLOW US</h4>
+                            <div class="footer-subscribe mt-3">
+                                <form class="row g-3">
+                                    <div class="col-auto">
+                                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="submit" class="btn btn-primary mb-3">Subscribe</button>
+                                    </div>
+                                </form>
+                            </div>
                             <div class="footer-social-list list-group list-group-horizontal">
                                 <a href="https://www.facebook.com/bexcodeservices" target="_blank" class="list-group-item"><i class="bi bi-facebook"></i></a>
                                 <a href="https://www.instagram.com/bexcodeusa/" target="_blank" class="list-group-item"><i class="bi bi-instagram"></i></a>
