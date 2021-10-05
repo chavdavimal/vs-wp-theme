@@ -61,8 +61,6 @@ body {
   font-size: 1rem;
   letter-spacing: -0.015em; }
 
-=======
->>>>>>> main
 :root {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 1.5rem;
@@ -74,7 +72,6 @@ body {
     :root {
       --pad-top-bottom: calc(80px - 50px); } }
 
-<<<<<<< HEAD
 img {
   max-width: 100%; }
 
@@ -96,8 +93,6 @@ img {
     padding-top: var(--pad-top-bottom);
     padding-bottom: var(--pad-top-bottom); } }
 
-=======
->>>>>>> main
 @media only screen and (min-width: 992px) {
   header .navbar {
     min-height: 100px; } }
@@ -198,7 +193,6 @@ header .navbar .navbar-brand img {
     object-position: center;
     height: 100%;
     width: 100%; }
-
 
 .site-footer .site-desc img {
   max-width: 200px;
