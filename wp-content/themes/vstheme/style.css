@@ -1,4 +1,206 @@
-<<<<<<< HEAD
-=======
-:root{--bs-gutter-x: 1.5rem;--bs-gutter-y: 1.5rem;--pad-top-bottom: 80px}@media only screen and (max-width: 1199px){:root{--pad-top-bottom: calc(80px - 30px)}}@media only screen and (max-width: 767px){:root{--pad-top-bottom: calc(80px - 50px)}}@media only screen and (min-width: 992px){header .navbar{min-height:100px}}header .navbar .navbar-brand img{max-width:200px;max-height:60px;object-fit:contain}@media only screen and (min-width: 768px){.size-c.left-c{max-width:calc(720px / 2);margin-left:auto;padding-left:30px}}@media only screen and (min-width: 992px){.size-c.left-c{max-width:calc(960px / 2);margin-left:auto;padding-left:30px}}@media only screen and (min-width: 1200px){.size-c.left-c{max-width:calc(1140px / 2);margin-left:auto;padding-left:30px}}@media only screen and (min-width: 1400px){.size-c.left-c{max-width:calc(1320px / 2);margin-left:auto;padding-left:30px}}@media only screen and (min-width: 768px){.size-c.right-c{max-width:calc(720px / 2);margin-right:auto;padding-right:30px}}@media only screen and (min-width: 992px){.size-c.right-c{max-width:calc(960px / 2);margin-right:auto;padding-right:30px}}@media only screen and (min-width: 1200px){.size-c.right-c{max-width:calc(1140px / 2);margin-right:auto;padding-right:30px}}@media only screen and (min-width: 1400px){.size-c.right-c{max-width:calc(1320px / 2);margin-right:auto;padding-right:30px}}.bg-img{position:absolute;height:100%;width:100%;background-size:cover;background-position:center;background-repeat:no-repeat;z-index:0;user-select:none}.banner-title{font-size:36px;line-height:36px;font-weight:bold;letter-spacing:1px}.banner-caption{font-size:20px}.banner-fullwidth{min-height:calc(100vh - 100px)}.banner-fullwidth .banner-contents{z-index:1}.banner-fullwidth .banner-contents .banner-title{color:#fff}.banner-fullwidth .banner-contents .banner-caption{color:#fff}.banner-halfwidth{min-height:calc(100vh - 100px)}.banner-halfwidth .banner-contents{z-index:1}.banner-halfwidth-1 .banner-contents{z-index:1}.banner-halfwidth-1 .right{min-height:calc(100vh - 100px)}.banner-halfwidth-1 .right img{object-fit:cover;object-position:center;height:100%;width:100%}
->>>>>>> 89aa3949ddeb48add5232824df48a7e19edfa28d
+/*
+Theme Name: VS-Theme
+Text Domain: vs-theme
+Version: 1.0 (Beta)
+Requires at least: 4.7
+Requires PHP: 5.2.4
+Description: Our theme for 2021 is designed to take full advantage of the flexibility of the block editor.
+Author: Vimal Chavda and Sweta Parmar from bexcode org.
+Author URI: https://bexcodeservices.com/
+Theme URI: https://bexcodeservices.com/themes/vs-theme/
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+All files, unless otherwise stated, are released under the GNU General Public
+License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned
+with others.
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+	0. 	CSS Reset
+	1. 	Document Setup
+	2. 	Element Base
+	3. 	Helper Classes
+	4. 	Site Header
+	5. 	Menu Modal
+	6. 	Search Modal
+	7. 	Page Templates
+		a. 	Template: Cover Template
+		c. 	Template: Full Width
+	8.  Post: Archive
+	9.  Post: Single
+	10. Blocks
+	11. Entry Content
+	12. Comments
+	13. Site Pagination
+	14. Error 404
+	15. Widgets
+	16. Site Footer
+	17. Media Queries
+
+----------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*	1. Document Setup
+/* -------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto; } }
+
+body {
+  box-sizing: border-box;
+  color: #000;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 1rem;
+  letter-spacing: -0.015em; }
+
+:root {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 1.5rem;
+  --pad-top-bottom: 80px; }
+  @media only screen and (max-width: 1199px) {
+    :root {
+      --pad-top-bottom: calc(80px - 30px); } }
+  @media only screen and (max-width: 767px) {
+    :root {
+      --pad-top-bottom: calc(80px - 50px); } }
+
+img {
+  max-width: 100%; }
+
+@media only screen and (min-width: 1200px) {
+  section,
+  .sec-p {
+    padding-top: var(--pad-top-bottom);
+    padding-bottom: var(--pad-top-bottom); } }
+
+@media only screen and (max-width: 1199px) {
+  section,
+  .sec-p {
+    padding-top: var(--pad-top-bottom);
+    padding-bottom: var(--pad-top-bottom); } }
+
+@media only screen and (max-width: 767px) {
+  section,
+  .sec-p {
+    padding-top: var(--pad-top-bottom);
+    padding-bottom: var(--pad-top-bottom); } }
+
+@media only screen and (min-width: 992px) {
+  header .navbar {
+    min-height: 100px; } }
+
+header .navbar .navbar-brand img {
+  max-width: 200px;
+  max-height: 60px;
+  object-fit: contain; }
+
+@media only screen and (min-width: 768px) {
+  .size-c.left-c {
+    max-width: calc(720px / 2);
+    margin-left: auto;
+    padding-left: 30px; } }
+
+@media only screen and (min-width: 992px) {
+  .size-c.left-c {
+    max-width: calc(960px / 2);
+    margin-left: auto;
+    padding-left: 30px; } }
+
+@media only screen and (min-width: 1200px) {
+  .size-c.left-c {
+    max-width: calc(1140px / 2);
+    margin-left: auto;
+    padding-left: 30px; } }
+
+@media only screen and (min-width: 1400px) {
+  .size-c.left-c {
+    max-width: calc(1320px / 2);
+    margin-left: auto;
+    padding-left: 30px; } }
+
+@media only screen and (min-width: 768px) {
+  .size-c.right-c {
+    max-width: calc(720px / 2);
+    margin-right: auto;
+    padding-right: 30px; } }
+
+@media only screen and (min-width: 992px) {
+  .size-c.right-c {
+    max-width: calc(960px / 2);
+    margin-right: auto;
+    padding-right: 30px; } }
+
+@media only screen and (min-width: 1200px) {
+  .size-c.right-c {
+    max-width: calc(1140px / 2);
+    margin-right: auto;
+    padding-right: 30px; } }
+
+@media only screen and (min-width: 1400px) {
+  .size-c.right-c {
+    max-width: calc(1320px / 2);
+    margin-right: auto;
+    padding-right: 30px; } }
+
+.bg-img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  user-select: none; }
+
+.banner-title {
+  font-size: 36px;
+  line-height: 36px;
+  font-weight: bold;
+  letter-spacing: 1px; }
+
+.banner-caption {
+  font-size: 20px; }
+
+.banner-fullwidth {
+  min-height: calc(100vh - 100px); }
+  .banner-fullwidth .banner-contents {
+    z-index: 1; }
+    .banner-fullwidth .banner-contents .banner-title {
+      color: #fff; }
+    .banner-fullwidth .banner-contents .banner-caption {
+      color: #fff; }
+
+.banner-halfwidth {
+  min-height: calc(100vh - 100px); }
+  .banner-halfwidth .banner-contents {
+    z-index: 1; }
+
+.banner-halfwidth-1 .banner-contents {
+  z-index: 1; }
+
+.banner-halfwidth-1 .right {
+  min-height: calc(100vh - 100px); }
+  .banner-halfwidth-1 .right img {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%; }
+
+.site-footer .site-desc img {
+  max-width: 200px;
+  max-height: 100px;
+  object-fit: contain;
+  object-position: center; }
+
+.site-footer .footer-social-list .list-group-item {
+  border: 0;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem; }

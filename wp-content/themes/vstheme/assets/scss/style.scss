@@ -1,3 +1,77 @@
+/*
+Theme Name: VS-Theme
+Text Domain: vs-theme
+Version: 1.0 (Beta)
+Requires at least: 4.7
+Requires PHP: 5.2.4
+Description: Our theme for 2021 is designed to take full advantage of the flexibility of the block editor.
+Author: Vimal Chavda and Sweta Parmar from bexcode org.
+Author URI: https://bexcodeservices.com/
+Theme URI: https://bexcodeservices.com/themes/vs-theme/
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+All files, unless otherwise stated, are released under the GNU General Public
+License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned
+with others.
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+	0. 	CSS Reset
+	1. 	Document Setup
+	2. 	Element Base
+	3. 	Helper Classes
+	4. 	Site Header
+	5. 	Menu Modal
+	6. 	Search Modal
+	7. 	Page Templates
+		a. 	Template: Cover Template
+		c. 	Template: Full Width
+	8.  Post: Archive
+	9.  Post: Single
+	10. Blocks
+	11. Entry Content
+	12. Comments
+	13. Site Pagination
+	14. Error 404
+	15. Widgets
+	16. Site Footer
+	17. Media Queries
+
+----------------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------------- */
+
+/*	1. Document Setup
+/* -------------------------------------------------------------------------- */
+
+
+html {
+	scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+body {
+	box-sizing: border-box;
+	color: #000;
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 1rem;
+	letter-spacing: -0.015em;
+}
+
+
 :root {
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 1.5rem;
@@ -7,6 +81,24 @@
     }
     @media only screen and (max-width: 767px) {
         --pad-top-bottom: calc(80px - 50px);
+    }
+}
+img{
+    max-width: 100%;
+}
+section,
+.sec-p{
+    @media only screen and (min-width: 1200px) {
+        padding-top: var(--pad-top-bottom);
+        padding-bottom: var(--pad-top-bottom);     
+    }
+    @media only screen and (max-width: 1199px) {
+        padding-top: var(--pad-top-bottom);
+        padding-bottom: var(--pad-top-bottom);  
+    }
+    @media only screen and (max-width: 767px) {
+        padding-top: var(--pad-top-bottom);
+        padding-bottom: var(--pad-top-bottom); 
     }
 }
 header{
@@ -133,5 +225,24 @@ header{
             height: 100%;
             width: 100%;
         }
+    }
+}
+// footer design
+.site-footer{
+    .site-desc{
+        img{
+            max-width: 200px;
+            max-height: 100px;
+            object-fit: contain;
+            object-position: center;
+        }
+    }
+    .footer-social-list{
+        .list-group-item{
+            border: 0;
+            padding-left: 0.4rem;
+            padding-right: 0.4rem;
+        }
+        
     }
 }

@@ -6,7 +6,7 @@
 get_header();
 ?>
 <div id="page_home" class="page-home">
-    <section class="section-banner">
+    <section class="section-banner py-0">
         <div class="banner-fullwidth d-flex align-items-center position-relative d-none">
             <div class="bg-img" style="background-image:url(<?php echo get_home_url()?>/wp-content/uploads/2021/10/bg1.jpg);" ></div>
             <div class="container banner-contents align-items-center">
