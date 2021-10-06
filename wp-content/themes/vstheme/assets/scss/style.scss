@@ -71,7 +71,9 @@ body {
 	letter-spacing: -0.015em;
 }
 
-
+.row {
+    --bs-gutter-x: 3.0rem;
+}
 :root {
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 1.5rem;
@@ -183,7 +185,12 @@ header{
     z-index: 0;
     user-select: none;
 }
-
+.section-banner{
+    @media only screen and (min-width: 768px) {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
 .banner-title{
     font-size: 36px;    
     line-height: 36px;
@@ -191,8 +198,7 @@ header{
     letter-spacing: 1px;
 }
 .banner-caption{
-    font-size: 20px;
-    
+    font-size: 20px;    
 }
 .banner-fullwidth{
     min-height: calc(100vh - 100px);
@@ -217,24 +223,50 @@ header{
     .banner-contents{
         z-index: 1;
     }
+    .left{
+        @media only screen and (max-width: 767px) {
+            margin-bottom: 1rem;
+        }
+    }
     .right{
-        min-height: calc(100vh - 100px);
+        min-height: calc(100vh - 100px);       
         img{
             object-fit: cover;
             object-position: center;
             height: 100%;
             width: 100%;
         }
+        @media only screen and (max-width: 767px) {
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 }
 // footer design
 .site-footer{
+    .footer-title{
+        font-weight: bold;
+    }
     .site-desc{
         img{
             max-width: 200px;
             max-height: 100px;
             object-fit: contain;
             object-position: center;
+        }
+    }
+    .quick-menu-list{
+        ul{
+            padding-left: 0;
+            list-style-type: none;
+            .nav-link{
+                padding-left: 0;
+                padding-right: 0;
+                width: fit-content;
+                padding-top: 0px;
+                color: #000;
+                text-transform: capitalize;
+            }
         }
     }
     .footer-social-list{

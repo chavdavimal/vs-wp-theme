@@ -61,6 +61,9 @@ body {
   font-size: 1rem;
   letter-spacing: -0.015em; }
 
+.row {
+  --bs-gutter-x: 3.0rem; }
+
 :root {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 1.5rem;
@@ -160,6 +163,11 @@ header .navbar .navbar-brand img {
   z-index: 0;
   user-select: none; }
 
+@media only screen and (min-width: 768px) {
+  .section-banner {
+    padding-top: 0;
+    padding-bottom: 0; } }
+
 .banner-title {
   font-size: 36px;
   line-height: 36px;
@@ -186,6 +194,10 @@ header .navbar .navbar-brand img {
 .banner-halfwidth-1 .banner-contents {
   z-index: 1; }
 
+@media only screen and (max-width: 767px) {
+  .banner-halfwidth-1 .left {
+    margin-bottom: 1rem; } }
+
 .banner-halfwidth-1 .right {
   min-height: calc(100vh - 100px); }
   .banner-halfwidth-1 .right img {
@@ -193,12 +205,30 @@ header .navbar .navbar-brand img {
     object-position: center;
     height: 100%;
     width: 100%; }
+  @media only screen and (max-width: 767px) {
+    .banner-halfwidth-1 .right {
+      padding-left: 0;
+      padding-right: 0; } }
+
+.site-footer .footer-title {
+  font-weight: bold; }
 
 .site-footer .site-desc img {
   max-width: 200px;
   max-height: 100px;
   object-fit: contain;
   object-position: center; }
+
+.site-footer .quick-menu-list ul {
+  padding-left: 0;
+  list-style-type: none; }
+  .site-footer .quick-menu-list ul .nav-link {
+    padding-left: 0;
+    padding-right: 0;
+    width: fit-content;
+    padding-top: 0px;
+    color: #000;
+    text-transform: capitalize; }
 
 .site-footer .footer-social-list .list-group-item {
   border: 0;
