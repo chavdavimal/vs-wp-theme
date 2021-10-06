@@ -3,7 +3,7 @@
             <div class="container">
                 <div class="row">
                     <!-- column 1 -->
-                    <div class="col-md-3 col-6 col-footer-1 order-md-0 order-0 mb-5">
+                    <div class="col-md-3 col-sm-6 col-footer-1 mb-md-0 mb-3">
                         <div class="site-desc">
                             <a href="<?php echo get_home_url()?>" role="button">                            
                                 <img src="<?php echo get_home_url()?>/wp-content/uploads/2021/10/logo_round.png" />
@@ -11,7 +11,7 @@
                         </div>
                     </div>
                     <!-- column 2 -->
-                    <div class="col-md-3 col-6 col-footer-2 order-md-1 order-2 mb-5">
+                    <div class="col-md-3 col-sm-6 col-footer-2 mb-md-0 mb-3">
                         <div class="quick-links">
                             <h5 class="footer-title">QUICK LINKS</h4>
                             <div class="quick-menu-list menu-list">
@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <!-- column 3 -->
-                    <div class="col-md-3 col-6 col-footer-3 order-md-2 order-3 mb-5">
+                    <div class="col-md-3 col-sm-6 col-footer-3 mb-md-0 mb-3">
                         <div class="footer-location">
                             <h5 class="footer-title">TALK TO US</h4>
                             <div class="location">
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                     <!-- column 4 -->
-                    <div class="col-md-3 col-6 col-footer-4 order-md-3 order-1 mb-5">
+                    <div class="col-md-3 col-sm-6 col-footer-4 mb-md-0 mb-3">
                         <div class="follow-us-links">
                             <h5 class="footer-title">FOLLOW US</h4>
                             <div class="footer-subscribe mt-3">

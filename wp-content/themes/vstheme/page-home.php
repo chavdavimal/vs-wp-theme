@@ -6,7 +6,7 @@
 get_header();
 ?>
 <div id="page_home" class="page-home">
-    <section class="section-banner py-0">
+    <section class="section-banner">
         <div class="banner-fullwidth d-flex align-items-center position-relative d-none">
             <div class="bg-img" style="background-image:url(<?php echo get_home_url()?>/wp-content/uploads/2021/10/bg1.jpg);" ></div>
             <div class="container banner-contents align-items-center">
@@ -46,7 +46,7 @@ get_header();
         </div>
         <!-- half banner -->
         <div class="banner-halfwidth-1 d-flex align-items-center position-relative">
-            <div class="container-fluid banner-contents p-0 overflow-hidden">
+            <div class="container-fluid banner-contents p-md-0 overflow-hidden">
                 <div class="row">
                     <div class="col-md-6 col-12 align-self-center left size-c left-c">
                         <div class="contents">
