@@ -40,6 +40,7 @@ add_action( 'wp_enqueue_scripts', 'my_register_scripts', 999 );
 register_nav_menus(array(
     'primary' =>  __( 'primary Menu'),
     'footer' => __( 'Footer Menu'),
+    'social' => __( 'Social Menu'),
 ));
 
 //Navigation Menus a tag add clsss
@@ -64,6 +65,17 @@ function themename_custom_logo_setup() {
 }
  
 add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
+
+
+// Add Widgets 
+function customtheme_widgets_init() {
+    register_sidebar( array(
+        'name'          => __( 'Sidebar', 'customtheme' ),
+        'id'            => 'sidebar-1',
+    ) );
+}
+
+add_action( 'widgets_init', 'customtheme_widgets_init' );
 
 // Add All Pages
 function diwp_add_dropdown_pages($wp_customize){
@@ -91,3 +103,41 @@ function diwp_add_dropdown_pages($wp_customize){
 }
  
 add_action( 'customize_register', 'diwp_add_dropdown_pages' );
+
+function twentytwenty_sidebar_registration() {
+
+    // Arguments used in all register_sidebar() calls.
+    $shared_args = array(
+        'before_title'  => '<h2 class="widget-title subheading heading-size-3">',
+        'after_title'   => '</h2>',
+        'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
+        'after_widget'  => '</div></div>',
+    );
+
+    // Footer #1.
+    register_sidebar(
+        array_merge(
+            $shared_args,
+            array(
+                'name'        => __( 'Footer #1', 'twentytwenty' ),
+                'id'          => 'sidebar-1',
+                'description' => __( 'Widgets in this area will be displayed in the first column in the footer.', 'twentytwenty' ),
+            )
+        )
+    );
+
+    // Footer #2.
+    register_sidebar(
+        array_merge(
+            $shared_args,
+            array(
+                'name'        => __( 'Footer #2', 'twentytwenty' ),
+                'id'          => 'sidebar-2',
+                'description' => __( 'Widgets in this area will be displayed in the second column in the footer.', 'twentytwenty' ),
+            )
+        )
+    );
+
+}
+
+add_action( 'widgets_init', 'twentytwenty_sidebar_registration' );
