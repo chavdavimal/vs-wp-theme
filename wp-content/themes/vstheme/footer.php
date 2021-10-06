@@ -8,13 +8,14 @@
                             <a href="<?php echo get_home_url()?>" role="button">                            
                                 <!-- <img src="<?php echo get_home_url()?>/wp-content/uploads/2021/10/logo_round.png" /> -->
                                 <?php 
-                                    $custom_logo_id = get_theme_mod( 'custom_logo' );
-                                    $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-                                        if ( has_custom_logo() ) {
-                                            echo '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
-                                        } else {
-                                            echo '<h1>' . get_bloginfo('name') . '</h1>';
-                                        }
+                                    the_custom_logo();
+
+                                    // No Custom Logo, just display the site's name
+                                    if (!has_custom_logo()) {
+                                        ?>
+                                            <h1><?php bloginfo('name'); ?></h1>
+                                        <?php
+                                    }
                                 ?>
                             </a>
 
@@ -44,6 +45,7 @@
                         <div class="footer-location">
                             <h5 class="footer-title">TALK TO US</h4>
                             <div class="location">
+                                <?php /*get_sidebar('Footer #1');*/ ?>
                                 <p><i class="bi bi-geo-alt-fill me-2"></i>5908 Breckenridge Parkway, Tampa, FL 33610, USA</p>
                             </div>
                         </div>
@@ -63,10 +65,17 @@
                                 </form>
                             </div>
                             <div class="footer-social-list list-group list-group-horizontal">
-                                <a href="https://www.facebook.com/bexcodeservices" target="_blank" class="list-group-item"><i class="bi bi-facebook"></i></a>
+                                <?php 
+                                    wp_nav_menu( array( 'theme_location' => 'social') );
+                                    /*wp_nav_menu(array(
+                                        'theme_location' =>  'social',
+                                        'menu_class' => 'list-group-item', 
+                                    ));*/
+                                ?>
+                                <!-- <a href="https://www.facebook.com/bexcodeservices" target="_blank" class="list-group-item"><i class="bi bi-facebook"></i></a>
                                 <a href="https://www.instagram.com/bexcodeusa/" target="_blank" class="list-group-item"><i class="bi bi-instagram"></i></a>
                                 <a href="https://www.linkedin.com/company/bexcode-services" target="_blank" class="list-group-item"><i class="bi bi-linkedin"></i></a>
-                                <a href="https://twitter.com/bexcodeservices" target="_blank" class="list-group-item"><i class="bi bi-twitter"></i></a>
+                                <a href="https://twitter.com/bexcodeservices" target="_blank" class="list-group-item"><i class="bi bi-twitter"></i></a> -->
                             </div>
                         </div>
                     </div>
