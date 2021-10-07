@@ -44,6 +44,7 @@ add_action( 'wp_enqueue_scripts', 'my_register_scripts' );
 register_nav_menus(array(
     'primary' =>  __( 'primary Menu'),
     'footer' => __( 'Footer Menu'),
+    'social' => __( 'Social Menu'),
 ));
 
 // Navigation Menus a tag add clsss
@@ -68,6 +69,17 @@ function themename_custom_logo_setup() {
 }
  
 add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
+
+
+// Add Widgets 
+function customtheme_widgets_init() {
+    register_sidebar( array(
+        'name'          => __( 'Sidebar', 'customtheme' ),
+        'id'            => 'sidebar-1',
+    ) );
+}
+
+add_action( 'widgets_init', 'customtheme_widgets_init' );
 
 // Add All Pages
 function diwp_add_dropdown_pages($wp_customize){
@@ -96,17 +108,3 @@ function diwp_add_dropdown_pages($wp_customize){
  
 add_action( 'customize_register', 'diwp_add_dropdown_pages' );
 
-
-// =====================================================================
-function arphabet_widgets_init() {
-
-    register_sidebar( array(
-        'name' => 'Home right sidebar',
-        'id' => 'home_right_1',
-        'before_widget' => '<div>',
-        'after_widget' => '</div>',
-        'before_title' => '<h2 class="rounded">',
-        'after_title' => '</h2>',
-    ) );
-}
-add_action( 'widgets_init', 'arphabet_widgets_init' );

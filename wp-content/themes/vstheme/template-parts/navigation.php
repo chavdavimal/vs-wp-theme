@@ -2,14 +2,13 @@
         <div class="container">
             <a class="navbar-brand" href="<?php echo get_home_url()?>">
                 <?php 
-                    $custom_logo_id = get_theme_mod( 'custom_logo' );
-                    $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-    
-                        if ( has_custom_logo() ) {
-                            echo '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
-                        } else {
-                            echo '<h1>' . get_bloginfo('name') . '</h1>';
-                        }
+                    the_custom_logo();
+                    // No Custom Logo, just display the site's name
+                    if (!has_custom_logo()) {
+                        ?>
+                            <h1><?php bloginfo('name'); ?></h1>
+                        <?php
+                    }
                 ?>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
