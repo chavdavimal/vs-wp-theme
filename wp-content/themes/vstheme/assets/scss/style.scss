@@ -220,6 +220,9 @@ header{
 }
 .banner-halfwidth-1{
     // min-height: calc(100vh - 100px);
+    @media only screen and (max-width: 767px) {
+        margin-top: 1rem;
+    }
     .banner-contents{
         z-index: 1;
     }
@@ -239,6 +242,24 @@ header{
         @media only screen and (max-width: 767px) {
             padding-left: 0;
             padding-right: 0;
+        }
+    }
+}
+.banner-full-slider{
+    .carousel{
+        .carousel-item{
+            .figure{
+                min-height: calc(100vh - 100px);
+                max-height: calc(100vh - 100px);
+                width: 100%;
+                img{
+                    object-fit: cover;
+                    object-position: center;
+                    width: 100%;
+                    min-height: calc(100vh - 100px);
+                    max-height: calc(100vh - 100px);
+                }
+            }
         }
     }
 }

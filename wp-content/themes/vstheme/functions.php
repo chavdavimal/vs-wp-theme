@@ -1,4 +1,10 @@
 <?php
+// title tag
+function vstheme_theme_support(){
+    add_theme_support('title-tag');
+}
+add_action('after_setup_theme','vstheme_theme_support');
+
 // custom css
 function my_register_styles() {
     $version = wp_get_theme()->get( 'Version' );
@@ -101,3 +107,4 @@ function diwp_add_dropdown_pages($wp_customize){
 }
  
 add_action( 'customize_register', 'diwp_add_dropdown_pages' );
+
