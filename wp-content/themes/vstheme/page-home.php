@@ -6,7 +6,7 @@
 get_header();
 ?>
 <div id="page_home" class="page-home">
-    <section class="section-banner">
+    <section class="section-banner p-0">
         <div class="banner-fullwidth d-flex align-items-center position-relative d-none">
             <div class="bg-img" style="background-image:url(<?php echo get_home_url()?>/wp-content/uploads/2021/10/bg1.jpg);" ></div>
             <div class="container banner-contents align-items-center">
@@ -38,7 +38,7 @@ get_header();
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 right">
+                    <div class="col-md-6 right mt-md-0 mt-4">
                         <img src="<?php echo get_home_url()?>/wp-content/uploads/2021/10/bg1.jpg);" alt="">
                     </div>
                 </div>
@@ -62,6 +62,47 @@ get_header();
                         <img src="<?php echo get_home_url()?>/wp-content/uploads/2021/10/bg1.jpg);" alt="">
                     </div>
                 </div>
+            </div>
+        </div>
+        <!-- slider -->
+        <div class="banner-full-slider d-none">
+            <div id="carouselExampleDark" class="carousel carousel-dark slide">
+                <div class="carousel-indicators">
+                    <button class="active" type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                        <div class="figure">
+                            <img src="<?php echo get_home_url()?>/wp-content/uploads/2021/10/bg1.jpg);" class="" alt="..." />
+                        </div>
+                        <div class="carousel-caption">
+                            <h5>First slide label</h5>
+                            <p>Some representative placeholder content for the first slide.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <div class="figure">
+                            <img src="<?php echo get_home_url()?>/wp-content/uploads/2021/10/logo_round.png);" class="" alt="..." />
+                        </div>
+                        <div class="carousel-caption">
+                            <h5>Second slide label</h5>
+                            <p>Some representative placeholder content for the second slide.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="figure">
+                            <img src="<?php echo get_home_url()?>/wp-content/uploads/2021/10/bg1.jpg);" class=""  alt="..." />
+                        </div>
+                        <div class="carousel-caption">
+                            <h5>Third slide label</h5>
+                            <p>Some representative placeholder content for the third slide.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="visually-hidden">Previous</span> </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="visually-hidden">Next</span> </button>
             </div>
         </div>
     </section>

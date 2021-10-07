@@ -1,4 +1,10 @@
 <?php
+// title tag
+function vstheme_theme_support(){
+    add_theme_support('title-tag');
+}
+add_action('after_setup_theme','vstheme_theme_support');
+
 // custom css
 function my_register_styles() {
     $version = wp_get_theme()->get( 'Version' );
@@ -89,3 +95,18 @@ function diwp_add_dropdown_pages($wp_customize){
 }
  
 add_action( 'customize_register', 'diwp_add_dropdown_pages' );
+
+
+// =====================================================================
+function arphabet_widgets_init() {
+
+    register_sidebar( array(
+        'name' => 'Home right sidebar',
+        'id' => 'home_right_1',
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '<h2 class="rounded">',
+        'after_title' => '</h2>',
+    ) );
+}
+add_action( 'widgets_init', 'arphabet_widgets_init' );

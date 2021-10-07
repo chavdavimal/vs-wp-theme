@@ -191,6 +191,10 @@ header .navbar .navbar-brand img {
   .banner-halfwidth .banner-contents {
     z-index: 1; }
 
+@media only screen and (max-width: 767px) {
+  .banner-halfwidth-1 {
+    margin-top: 1rem; } }
+
 .banner-halfwidth-1 .banner-contents {
   z-index: 1; }
 
@@ -209,6 +213,17 @@ header .navbar .navbar-brand img {
     .banner-halfwidth-1 .right {
       padding-left: 0;
       padding-right: 0; } }
+
+.banner-full-slider .carousel .carousel-item .figure {
+  min-height: calc(100vh - 100px);
+  max-height: calc(100vh - 100px);
+  width: 100%; }
+  .banner-full-slider .carousel .carousel-item .figure img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    min-height: calc(100vh - 100px);
+    max-height: calc(100vh - 100px); }
 
 .site-footer .footer-title {
   font-weight: bold; }
