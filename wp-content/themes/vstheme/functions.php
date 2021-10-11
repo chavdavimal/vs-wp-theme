@@ -74,37 +74,125 @@ add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
 // Add Widgets 
 function customtheme_widgets_init() {
     register_sidebar( array(
-        'name'          => __( 'Sidebar', 'customtheme' ),
-        'id'            => 'sidebar-1',
+        'name'          => __( 'Footer 1', 'customtheme' ),
+        'id'            => 'footer-1',
+    ) );
+
+    register_sidebar( array(
+        'name'          => __( 'Footer 2', 'customtheme' ),
+        'id'            => 'footer-2',
+    ) );
+
+    register_sidebar( array(
+        'name'          => __( 'Footer 3', 'customtheme' ),
+        'id'            => 'footer-3',
+    ) );
+
+    register_sidebar( array(
+        'name'          => __( 'Footer 4', 'customtheme' ),
+        'id'            => 'footer-4',
     ) );
 }
 
 add_action( 'widgets_init', 'customtheme_widgets_init' );
 
 // Add All Pages
-function diwp_add_dropdown_pages($wp_customize){
- 
+function vs_add_dropdown_pages($wp_customize){
     //add section
-    $wp_customize->add_section( 'diwp_dropdown_page_section', array(
- 
-                'title' => 'All Pages',
-                'priority' => 10
+    $wp_customize->add_section( 'vs_dropdown_page_section', array(
+        'title' => 'All Pages',
+        'priority' => 10
     ));
- 
     //add setting
-    $wp_customize->add_setting( 'diwp_dropdown_page', array(
-                'default' => '',
+    $wp_customize->add_setting( 'vs_dropdown_page', array(
+        'default' => '',
+    ));
+    //add control
+    $wp_customize->add_control( 'vs_dropdown_page_control', array(
+        'label' => 'Select Page',
+        'type'  => 'dropdown-pages',
+        'section' => 'vs_dropdown_page_section',
+        'settings' => 'vs_dropdown_page'
+    ));
+}
+ 
+add_action( 'customize_register', 'vs_add_dropdown_pages' );
+
+//=========================================================
+// Add New Colors Section : VS Colors
+//=========================================================
+ 
+function vs_customizer_add_colorPicker( $wp_customize){
+     
+    // Add New Section: VS Colors
+  
+    $wp_customize->add_section( 'vs_color_section', array(
+                     'title' => 'VS Colors',
+                     'description' => 'Set Colors For Background & Links',
+                     'priority' => '40'                  
     ));
  
-    //add control
-    $wp_customize->add_control( 'diwp_dropdown_page_control', array(
-                'label' => 'Select Page',
-                'type'  => 'dropdown-pages',
-                'section' => 'diwp_dropdown_page_section',
-                'settings' => 'diwp_dropdown_page'
+    // Add Settings 
+    $wp_customize->add_setting( 'vs_theme_color', array(
+        'default' => '#04bfbf',
     ));
+ 
+ 
+    $wp_customize->add_setting( 'vs_header_bgcolor', array(
+        'default' => '#45ace0',                        
+    ));
+ 
+ 
+    // Add Controls
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'vs_theme_color', array(
+        'label' => 'Theme Color',
+        'section' => 'vs_color_section',
+        'settings' => 'vs_theme_color'
+ 
+    )));
+ 
+ 
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'vs_header_bgcolor', array(
+        'label' => 'Header Background',
+        'section' => 'vs_color_section',
+        'settings' => 'vs_header_bgcolor'
+    )));
  
 }
  
-add_action( 'customize_register', 'diwp_add_dropdown_pages' );
+add_action( 'customize_register', 'vs_customizer_add_colorPicker' );
 
+function vs_generate_theme_option_css(){
+ 
+    $themeColor = get_theme_mod('vs_theme_color');
+    $header_bgcolor = get_theme_mod('vs_header_bgcolor');
+ 
+    if(!empty($themeColor)):
+     
+    ?>
+    <style type="text/css" id="vs-theme-option-css">
+         
+        .site-header{
+            background:<?php echo $header_bgcolor; ?>;
+        }
+ 
+        a:hover{
+            color: <?php echo $themeColor; ?>
+        }        
+ 
+        .search-form .search-submit{
+            background: <?php echo $themeColor; ?>
+        }
+ 
+        .entry-title a:hover, .entry-title a:focus, .entry-title a:active, .page-title a:hover, .page-title a:focus, .page-title a:active {
+            color: <?php echo $themeColor; ?>;
+        }
+     
+    </style>    
+ 
+    <?php
+ 
+    endif;    
+}
+
+add_action( 'wp_head', 'vs_generate_theme_option_css' );
