@@ -1,4 +1,10 @@
 <?php
+// title tag
+function vstheme_theme_support(){
+    add_theme_support('title-tag');
+}
+add_action('after_setup_theme','vstheme_theme_support');
+
 // custom css
 function my_register_styles() {
     $version = wp_get_theme()->get( 'Version' );
@@ -188,5 +194,5 @@ function vs_generate_theme_option_css(){
  
     endif;    
 }
- 
+
 add_action( 'wp_head', 'vs_generate_theme_option_css' );
