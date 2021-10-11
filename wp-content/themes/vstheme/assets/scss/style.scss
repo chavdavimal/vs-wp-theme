@@ -55,6 +55,7 @@ with others.
 
 html {
 	scroll-behavior: smooth;
+    font-family: 'Bitter', serif;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -66,11 +67,24 @@ html {
 body {
 	box-sizing: border-box;
 	color: #000;
-	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+    font-family: 'Bitter', serif;
 	font-size: 1rem;
-	letter-spacing: -0.015em;
+    font-weight: 400;
+	letter-spacing: 1.15px;
 }
-
+section,div,p,figcaption{
+    color: #000;
+    font-family: 'Bitter', serif;
+	font-size: 1rem;
+    font-weight: 400;
+	letter-spacing: 1.15px;
+}
+h1,h2,h3,h4,h5,h6{
+    color: #000;
+    font-family: 'Bitter', serif;
+	font-weight: 800;
+	letter-spacing: 1.15px;
+}
 .row {
     --bs-gutter-x: 3.0rem;
 }
@@ -112,6 +126,7 @@ header{
         .navbar-brand{
             img{
                 max-width: 200px;
+                width: 100%;
                 max-height: 60px;
                 object-fit: contain;
             }
@@ -194,7 +209,7 @@ header{
 .banner-title{
     font-size: 36px;    
     line-height: 36px;
-    font-weight: bold;
+    font-weight: 800;
     letter-spacing: 1px;
 }
 .banner-caption{
@@ -271,22 +286,26 @@ header{
     .site-desc{
         img{
             max-width: 200px;
+            width: 100%;
             max-height: 100px;
             object-fit: contain;
-            object-position: center;
+            object-position: left;
         }
     }
     .quick-menu-list{
         ul{
             padding-left: 0;
             list-style-type: none;
-            .nav-link{
+            .nav-link,
+            .page_item,
+            .page_item a{
                 padding-left: 0;
                 padding-right: 0;
                 width: fit-content;
                 padding-top: 0px;
                 color: #000;
                 text-transform: capitalize;
+                text-decoration: none;
             }
         }
     }
